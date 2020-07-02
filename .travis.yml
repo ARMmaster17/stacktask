@@ -8,12 +8,12 @@ before_install:
   - gem install bundler
 before_script:
   - psql -c 'CREATE DATABASE stacktask_test;' -U postgres
-  - rails db:migrate
+  - rake db:migrate
 deploy:
   provider: heroku
   edge: true
   app: stacktask
   strategy: api
-  run: rails db:migrate
+  run: rake db:migrate
   on:
     branch: master
