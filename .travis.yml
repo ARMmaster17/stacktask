@@ -6,6 +6,7 @@ services:
   - postgresql
 before_install:
   - gem install bundler
+  - sed -i 's/x64-mingw32//g' Gemfile.lock
 before_script:
   - psql -c 'CREATE DATABASE stacktask_test;' -U postgres
   - rake db:migrate
