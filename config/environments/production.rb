@@ -114,7 +114,7 @@ Rails.application.configure do
 
   ActionMailer::Base.smtp_settings = {
       user_name: ENV['SENDGRID_USERNAME'],
-      api_key: ENV['SENDGRID_PASSWORD'],
+      password: ENV['SENDGRID_PASSWORD'],
       domain: 'stacktask.herokuapp.com',
       address: 'smtp.sendgrid.net',
       port: 465,
