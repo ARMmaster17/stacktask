@@ -3,19 +3,4 @@ user1:
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   confirmed_at: 2020-01-01 01:02:01.00001
   confirmation_sent_at: 2020-01-01 01:01:01.000001
-user_invalid_email:
-  email: user1
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
-  confirmed_at: 2020-01-01 01:02:01.00001
-  confirmation_sent_at: 2020-01-01 01:01:01.000001
-user_no_email:
-  email:
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
-  confirmed_at: 2020-01-01 01:02:01.00001
-  confirmation_sent_at: 2020-01-01 01:01:01.000001
-user_no_password:
-  email: user1@example.com
-  encrypted_password:
-  confirmed_at: 2020-01-01 01:02:01.00001
-  confirmation_sent_at: 2020-01-01 01:01:01.000001
 
