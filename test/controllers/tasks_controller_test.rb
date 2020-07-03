@@ -1,5 +1,4 @@
 require 'test_helper'
-include Devise::TestHelpers
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
   setup do
