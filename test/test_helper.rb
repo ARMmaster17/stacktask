@@ -2,7 +2,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 
-if ENV['RAILS_ENV'] == 'test'
+if ENV['RAILS_ENV'] == 'test' and ENV['CI'] == 'true'
   require 'simplecov'
   SimpleCov.start
 

@@ -1,10 +1,15 @@
 require 'test_helper'
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
+
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @task = tasks(:task1)
     @list = lists(:list1)
     @user = users(:user1)
+    @user.password = get_default_password
+    sign_in @user
   end
 
   test "should get index" do

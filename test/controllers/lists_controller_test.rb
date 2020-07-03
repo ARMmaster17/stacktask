@@ -1,9 +1,14 @@
 require 'test_helper'
 
 class ListsControllerTest < ActionDispatch::IntegrationTest
+
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @list = lists(:list1)
     @user = users(:user1)
+    @user.password = get_default_password
+    sign_in @user
   end
 
   test "should get index" do

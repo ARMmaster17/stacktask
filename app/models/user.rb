@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
-  has_many :lists
+  has_many :lists, dependent: :destroy
+
+  validates :encrypted_password, presence: true
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later

@@ -1,10 +1,12 @@
 require "application_system_test_case"
-include Warden::Test::Helpers
 
 class ListsTest < ApplicationSystemTestCase
+
+  #include Warden::Test::Helpers
+
   setup do
     @list = lists(:list1)
-    login_as users(:user1)
+      #login_as users(:user1)
   end
 
   test "visiting the index" do
