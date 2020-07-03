@@ -1,8 +1,11 @@
 require "application_system_test_case"
+include Warden::Test::Helpers
 
 class TasksTest < ApplicationSystemTestCase
   setup do
-    @task = tasks(:one)
+    @task = tasks(:task1)
+    @list = lists(:list1)
+    login_as users(:user1)
   end
 
   test "visiting the index" do

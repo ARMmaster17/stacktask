@@ -1,8 +1,10 @@
 require 'test_helper'
+include Devise::TestHelpers
 
 class ListsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @list = lists(:one)
+    @list = lists(:list1)
+    @user = users(:user1)
   end
 
   test "should get index" do

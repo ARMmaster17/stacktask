@@ -3,3 +3,9 @@
 task1:
   list: list1
   name: The first task
+task_no_name:
+  list: list1
+  name:
+task_long_name:
+  list: list1
+  name: abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij

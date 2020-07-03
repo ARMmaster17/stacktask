@@ -4,6 +4,9 @@ dist: bionic
 cache: bundler
 services:
   - postgresql
+  - xvfb
+addons:
+  chrome: stable
 before_install:
   - gem install bundler
   - sed -i 's/x64-mingw32//g' Gemfile.lock

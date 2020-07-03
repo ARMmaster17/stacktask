@@ -1,48 +1,51 @@
 require 'test_helper'
+include Devise::TestHelpers
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @task = tasks(:one)
+    @task = tasks(:task1)
+    @list = lists(:list1)
+    @user = users(:user1)
   end
 
   test "should get index" do
-    get tasks_url
+    get list_tasks_url(@list)
     assert_response :success
   end
 
   test "should get new" do
-    get new_task_url
+    get new_list_task_url(@list)
     assert_response :success
   end
 
   test "should create task" do
     assert_difference('Task.count') do
-      post tasks_url, params: { task: { list_id: @task.list_id, name: @task.name } }
+      post list_tasks_url(@list), params: { task: { list_id: @task.list_id, name: @task.name } }
     end
 
-    assert_redirected_to task_url(Task.last)
+    assert_redirected_to list_task_url(@list, Task.last)
   end
 
   test "should show task" do
-    get task_url(@task)
+    get list_task_url(@list, @task)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_task_url(@task)
+    get edit_list_task_url(@list, @task)
     assert_response :success
   end
 
   test "should update task" do
-    patch task_url(@task), params: { task: { list_id: @task.list_id, name: @task.name } }
-    assert_redirected_to task_url(@task)
+    patch list_task_url(@list, @task), params: { task: { list_id: @task.list_id, name: @task.name } }
+    assert_redirected_to list_task_url(@list, @task)
   end
 
   test "should destroy task" do
     assert_difference('Task.count', -1) do
-      delete task_url(@task)
+      delete list_task_url(@list, @task)
     end
 
-    assert_redirected_to tasks_url
+    assert_redirected_to list_tasks_url(@list)
   end
 end
