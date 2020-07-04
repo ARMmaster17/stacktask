@@ -2,6 +2,6 @@
 //
 // <hello-angular>Loading...</hello-angular>
 //
-// <%= javascript_pack_tag 'hello_angular' %>
+// <%= javascript_pack_tag 'angular' %>
 
-require('../hello_angular')
+require('../go')
