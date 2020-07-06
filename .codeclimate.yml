@@ -15,5 +15,6 @@ plugins:
     enabled: true
   rubocop:
     enabled: true
+    channel: rubocop-0-86
   scss-lint:
     enabled: true
