@@ -1,5 +1,6 @@
 import {useQuery} from "react-query";
 import OrganizationCard from "../components/org/OrganizationCard";
+import NewOrganizationWindowControl from "../components/org/NewOrganizationWindowControl";
 
 export default function Organizations() {
     const fetchOrganizations = async () => {
@@ -25,6 +26,7 @@ export default function Organizations() {
             {data.map((organization) => (
                 <OrganizationCard organization={organization} />
             ))}
+            <NewOrganizationWindowControl />
         </div>
     );
 }
